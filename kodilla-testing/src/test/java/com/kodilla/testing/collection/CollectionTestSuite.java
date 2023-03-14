@@ -1,7 +1,5 @@
 package com.kodilla.testing.collection;
-
 import org.junit.jupiter.api.*;
-
 import java.util.*;
 
 public class CollectionTestSuite {
