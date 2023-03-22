@@ -45,6 +45,7 @@ public class WorldTestSuite {
 
         World world = new World(continentsList);
         List<Continent> worldList = world.getContinentList();
+
         //When
         BigDecimal providedResult = world.getPeopleQuantity();
         System.out.println(providedResult + "\n" + worldList.toString());
