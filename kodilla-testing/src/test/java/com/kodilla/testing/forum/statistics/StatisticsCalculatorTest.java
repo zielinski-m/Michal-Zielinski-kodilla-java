@@ -21,15 +21,7 @@ public class StatisticsCalculatorTest {
     public void beforeTestAnnotation() {
         System.out.println("Test begin: ");
     }
-    public double setAvgOfCommentsPerUser() {
-        return (double) statisticsMock.commentsCount() / statisticsMock.usersNames().size();
-    }
-    public double setAvgOfCommentsPerPosts() {
-        return (double) statisticsMock.commentsCount() / statisticsMock.postsCount();
-    }
-    public double setAvgOfPostsPerUse() {
-        return (double) statisticsMock.postsCount() / statisticsMock.usersNames().size();
-    }
+
     public void setStatistics() {
         statisticsMock = mock(Statistics.class);
         statisticsCalculator = new StatisticsCalculator();
@@ -55,8 +47,8 @@ public class StatisticsCalculatorTest {
         // When
         statisticsCalculator.calculateAdvStatistics(statisticsMock);
 
-        double expectedCPerUser = setAvgOfCommentsPerUser();
-        double expectedPPerUser = setAvgOfPostsPerUse();
+        double expectedCPerUser = (double) statisticsMock.commentsCount() / statisticsMock.usersNames().size();
+        double expectedPPerUser = (double) statisticsMock.postsCount() / statisticsMock.usersNames().size();
 
         // Then
         assertEquals(3, statisticsCalculator.getUsersCount());
@@ -84,9 +76,9 @@ public class StatisticsCalculatorTest {
         //When
         statisticsCalculator.calculateAdvStatistics(statisticsMock);
 
-        double expectedCPerUser = setAvgOfCommentsPerUser();
-        double expectedCPerPost = setAvgOfCommentsPerPosts();
-        double expectedPPerUser = setAvgOfPostsPerUse();
+        double expectedCPerUser = (double) statisticsMock.commentsCount() / statisticsMock.usersNames().size();
+        double expectedCPerPost = (double) statisticsMock.commentsCount() / statisticsMock.postsCount();
+        double expectedPPerUser = (double) statisticsMock.postsCount() / statisticsMock.usersNames().size();
 
         //Then
         assertEquals(3, statisticsCalculator.getUsersCount());
@@ -114,9 +106,9 @@ public class StatisticsCalculatorTest {
         //When
         statisticsCalculator.calculateAdvStatistics(statisticsMock);
 
-        double expectedCPerUser = setAvgOfCommentsPerUser();
-        double expectedCPerPost = setAvgOfCommentsPerPosts();
-        double expectedPPerUser = setAvgOfPostsPerUse();
+        double expectedCPerUser = (double) statisticsMock.commentsCount() / statisticsMock.usersNames().size();
+        double expectedCPerPost = (double) statisticsMock.commentsCount() / statisticsMock.postsCount();
+        double expectedPPerUser = (double) statisticsMock.postsCount() / statisticsMock.usersNames().size();
 
         //Then
         assertEquals(3, statisticsCalculator.getUsersCount());
@@ -144,9 +136,9 @@ public class StatisticsCalculatorTest {
         //When
         statisticsCalculator.calculateAdvStatistics(statisticsMock);
 
-        double expectedCPerUser = setAvgOfCommentsPerUser();
-        double expectedCPerPost = setAvgOfCommentsPerPosts();
-        double expectedPPerUser = setAvgOfPostsPerUse();
+        double expectedCPerUser = (double) statisticsMock.commentsCount() / statisticsMock.usersNames().size();
+        double expectedCPerPost = (double) statisticsMock.commentsCount() / statisticsMock.postsCount();
+        double expectedPPerUser = (double) statisticsMock.postsCount() / statisticsMock.usersNames().size();
         boolean expectedResult = statisticsMock.commentsCount() < statisticsMock.postsCount();
 
         //Then
@@ -176,9 +168,9 @@ public class StatisticsCalculatorTest {
         //When
         statisticsCalculator.calculateAdvStatistics(statisticsMock);
 
-        double expectedCPerUser = setAvgOfCommentsPerUser();
-        double expectedCPerPost = setAvgOfCommentsPerPosts();
-        double expectedPPerUser = setAvgOfPostsPerUse();
+        double expectedCPerUser = (double) statisticsMock.commentsCount() / statisticsMock.usersNames().size();
+        double expectedCPerPost = (double) statisticsMock.commentsCount() / statisticsMock.postsCount();
+        double expectedPPerUser = (double) statisticsMock.postsCount() / statisticsMock.usersNames().size();
         boolean expectedResult = statisticsMock.commentsCount() > statisticsMock.postsCount();
 
         //Then
@@ -203,7 +195,7 @@ public class StatisticsCalculatorTest {
 
         //When
         statisticsCalculator.calculateAdvStatistics(statisticsMock);
-        double expectedCPerPost = setAvgOfCommentsPerPosts();
+        double expectedCPerPost = (double) statisticsMock.commentsCount() / statisticsMock.postsCount();
 
         //Then
         assertEquals(0, statisticsCalculator.getUsersCount());
@@ -228,9 +220,9 @@ public class StatisticsCalculatorTest {
 
         //When
         statisticsCalculator.calculateAdvStatistics(statisticsMock);
-        double expectedCPerUser = setAvgOfCommentsPerUser();
-        double expectedCPerPost = setAvgOfCommentsPerPosts();
-        double expectedPPerUser = setAvgOfPostsPerUse();
+        double expectedCPerUser = (double) statisticsMock.commentsCount() / statisticsMock.usersNames().size();
+        double expectedCPerPost = (double) statisticsMock.commentsCount() / statisticsMock.postsCount();
+        double expectedPPerUser = (double) statisticsMock.postsCount() / statisticsMock.usersNames().size();
 
         //Then
         assertEquals(100, statisticsCalculator.getUsersCount());
@@ -239,7 +231,6 @@ public class StatisticsCalculatorTest {
         assertEquals(expectedPPerUser, statisticsCalculator.getPostsPerUser());
         assertEquals(expectedCPerPost, statisticsCalculator.getCommentsPerPost());
         assertEquals(expectedCPerUser, statisticsCalculator.getCommentsPerUser());
-
     }
 }
 
