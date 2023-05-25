@@ -9,7 +9,6 @@ public class FlightScannerExceptionHandling {
         Flight flightWithException = new Flight("Tokyo", "NYC");
         Flight flightWith2Exception = new Flight("NYC", "Tokyo");
 
-
         try {
             flightScanner.findFlight(flightNoException);
             System.out.println("Flight founded");
