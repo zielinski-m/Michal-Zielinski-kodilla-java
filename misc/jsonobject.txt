@@ -1,0 +1,23 @@
+{
+  "carName": "Sedan Deluxe",
+  "carBrand": "BWM",
+  "seats": [
+    {
+      "material": "Leather",
+      "color": "Black"
+    },
+    {
+      "material": "Fabric",
+      "color": "Beige"
+    },
+    {
+      "material": "Leather",
+      "color": "Brown"
+    },
+    {
+      "material": "Leather",
+      "color": "Black"
+    }
+  ],
+  "engineCapacity": "2.0L"
+}
