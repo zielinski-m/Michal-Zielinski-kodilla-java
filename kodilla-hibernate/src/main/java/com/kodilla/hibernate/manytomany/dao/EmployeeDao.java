@@ -14,4 +14,7 @@ public interface EmployeeDao extends CrudRepository<Employee, Integer> {
 
     @Query("SELECT e FROM Employee e WHERE e.lastname = :lastname")
     List<Employee> findEmployeesByLastName(String lastname);
+
+    @Query("SELECT e FROM Employee e WHERE e.firstname LIKE :fragment OR e.lastname LIKE :fragment")
+    List<Employee> findByEmployeeNameFragment(String fragment);
 }
