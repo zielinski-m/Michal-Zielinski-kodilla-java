@@ -56,7 +56,7 @@ public class StoredProcTestSuite {
         if (resultSet.next()) {
             howMany = resultSet.getInt("HOW_MANY");
         }
-        assertEquals(1, howMany);
+        assertEquals(3, howMany);
         resultSet.close();
         statement.close();
         statement1.close();

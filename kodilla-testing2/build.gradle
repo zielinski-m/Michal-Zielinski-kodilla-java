@@ -1,0 +1,27 @@
+plugins {
+    id 'java'
+}
+
+group = 'com.kodilla'
+version = '0.0.1-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.7.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.7.2'
+    testImplementation 'org.seleniumhq.selenium:selenium-java:4.15.0'
+    implementation 'org.seleniumhq.selenium:selenium-api:4.15.0'
+    implementation 'org.seleniumhq.selenium:selenium-http:4.15.0'
+    implementation 'org.seleniumhq.selenium:selenium-chrome-driver:4.15.0'
+    implementation 'org.seleniumhq.selenium:selenium-firefox-driver:4.15.0'
+    implementation 'org.seleniumhq.selenium:selenium-devtools-v119:4.15.0'
+    implementation 'org.seleniumhq.selenium:selenium-support:4.15.0'
+
+}
+
+test {
+    useJUnitPlatform()
+}
